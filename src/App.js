@@ -1,8 +1,15 @@
+import React from 'react'
 import logo from './logo.svg';
 import './App.css';
+import { Inspector } from 'react-dev-inspector'
+
+const InspectorWrapper = process.env.NODE_ENV === 'development'
+  ? Inspector
+  : React.Fragment
 
 function App() {
   return (
+    <InspectorWrapper>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -19,6 +26,7 @@ function App() {
         </a>
       </header>
     </div>
+    </InspectorWrapper>
   );
 }
 
